@@ -10,9 +10,19 @@ Vagrant::Config.run do |config|
   config.vm.box = "lucid32"
 
   config.vm.provision :chef_solo do |chef|
-    chef.recipe_url = "http://files.vagrantup.com/getting_started/cookbooks.tar.gz"
+    chef.cookbooks_path = "cookbooks"
+    chef.add_recipe "build-essential"
+    chef.add_recipe "git"
+    chef.add_recipe "vim"
+    chef.add_recipe "openssl"
+    chef.add_recipe "mysql::client"
+    chef.add_recipe "mysql::server"
 
-    chef.add_recipe "vagrant_main"
+    chef.json = {
+      "mysql" => {
+        "server_root_password" => "password"
+      }
+    }
   end
 
 
