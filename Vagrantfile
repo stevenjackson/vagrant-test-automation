@@ -17,6 +17,8 @@ Vagrant::Config.run do |config|
     chef.add_recipe "openssl"
     chef.add_recipe "mysql::client"
     chef.add_recipe "mysql::server"
+    chef.add_recipe "java"
+    chef.add_recipe "tomcat"
 
     chef.json = {
       "mysql" => {
