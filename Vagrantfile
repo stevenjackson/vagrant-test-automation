@@ -20,7 +20,9 @@ Vagrant::Config.run do |config|
 
     chef.json = {
       "mysql" => {
-        "server_root_password" => "password"
+        "server_root_password" => "password",
+        "server_repl_password" => "password",
+        "server_debian_password" => "password"
       }
     }
   end
