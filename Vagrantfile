@@ -7,7 +7,7 @@ Vagrant::Config.run do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "lucid32"
+  config.vm.box = "centos"
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
@@ -15,10 +15,12 @@ Vagrant::Config.run do |config|
     chef.add_recipe "git"
     chef.add_recipe "vim"
     chef.add_recipe "openssl"
-    chef.add_recipe "mysql::client"
+    chef.add_recipe "mysql"
     chef.add_recipe "mysql::server"
     chef.add_recipe "java"
     chef.add_recipe "tomcat"
+    chef.add_recipe "rvm::system"
+    chef.add_recipe "rvm::vagrant"
 
     chef.json = {
       "mysql" => {
