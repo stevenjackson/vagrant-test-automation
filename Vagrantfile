@@ -19,14 +19,25 @@ Vagrant::Config.run do |config|
     chef.add_recipe "mysql::server"
     chef.add_recipe "java"
     chef.add_recipe "tomcat"
-    chef.add_recipe "rvm::system"
     chef.add_recipe "rvm::vagrant"
+    chef.add_recipe "rvm::system"
+    chef.add_recipe "test-automation"
 
     chef.json = {
       "mysql" => {
         "server_root_password" => "password",
         "server_repl_password" => "password",
         "server_debian_password" => "password"
+      },
+      'rvm' => {
+        'global_gems'  => [
+            {'name'    => 'bundler'},
+            {'name'    => 'rake'}
+        ],
+        'vagrant' => {
+            'system_chef_solo' => '/usr/bin/chef-solo'
+        },
+        'group_users' => [ "vagrant" ]
       }
     }
   end
