@@ -1,4 +1,15 @@
+Description
+-----------
 Project using vagrant to setup an ATDD environment on centos 6.3 box
+
+Dependencies
+----------------------
+* [VirtualBox](https://www.virtualbox.org)
+* [Vagrant](http://vagrantup.com)
+
+
+Current "recipe"
+-----------------------
 * git
 * vim
 * openssl
@@ -10,7 +21,7 @@ Project using vagrant to setup an ATDD environment on centos 6.3 box
 * Xvfb
 
 To use 
-
+-------------------------
 ```
 $ vagrant box add centos https://s3.amazonaws.com/itmat-public/centos-6.3-chef-10.14.2.box
 $ vagrant up 
