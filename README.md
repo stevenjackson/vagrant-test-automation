@@ -12,17 +12,10 @@ Project using vagrant to setup an ATDD environment on centos 6.3 box
 To use 
 
 ```
-<<<<<<< HEAD
 $ vagrant box add centos https://s3.amazonaws.com/itmat-public/centos-6.3-chef-10.14.2.box
 $ vagrant up 
 $ vagrant reload
 $ vagrant ssh
-=======
-vagrant box add centos https://s3.amazonaws.com/itmat-public/centos-6.3-chef-10.14.2.box
-vagrant up 
-vagrant reload
-vagrant ssh
->>>>>>> abd1ef2acf80139f9cb802eb99bdb8c9511acb67
 ```
 
 From there clone any repositories and bundle accordingly.
