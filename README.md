@@ -33,3 +33,8 @@ From there clone any repositories and bundle accordingly.
 
 Any files stored with the Vagrantfile become accessible under the /vagrant directory in the VM.  So, a vagrant file and cookbooks can be added to an existing repo, providing a way to spin up a testing environment with the test code already installed.
 
+
+Managing VM
+---------------------------
+
+See [Vagrant guide](http://vagrantup.com/v1/docs/getting-started/teardown.html) for information on starting and stopping VMs. 
