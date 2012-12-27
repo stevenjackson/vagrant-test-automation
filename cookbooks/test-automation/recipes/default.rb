@@ -19,3 +19,12 @@
 
 package "firefox"
 package "Xvfb"
+
+bash "install_gnome" do
+  interpreter "bash"
+  user "root"
+  cwd "/tmp"
+  code <<-EOH
+  yum -y groupinstall basic-desktop desktop-platform x11 fonts
+  EOH
+end
