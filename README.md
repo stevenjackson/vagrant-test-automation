@@ -19,6 +19,7 @@ Current "recipe"
 * rvm
 * firefox
 * Xvfb
+* gnome
 
 To use 
 -------------------------
