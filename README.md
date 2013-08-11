@@ -1,11 +1,13 @@
 Description
 -----------
-Project using vagrant to setup an ATDD environment with GUI on centos 6.3 box
+Project using vagrant to setup an ATDD environment ubuntu (precise64) box
 
 Dependencies
 ----------------------
 * [VirtualBox](https://www.virtualbox.org)
 * [Vagrant](http://vagrantup.com)
+* [vagrant-berkshelf](https://github.com/riotgames/vagrant-berkshelf)
+* [vagrant-omnibus](https://github.com/schisamo/vagrant-omnibus)
 
 
 Current "recipe"
@@ -15,26 +17,19 @@ Current "recipe"
 * openssl
 * mysql
 * java
-* tomcat
 * rvm
-* firefox
-* Xvfb
-* gnome
 
 To use 
 -------------------------
 ```
-$ vagrant box add centos https://s3.amazonaws.com/itmat-public/centos-6.3-chef-10.14.2.box
+$ vagrant plugin install vagrant-berkshelf
+$ vagrant plugin install vagrant-omnibus
 $ vagrant up 
-$ vagrant halt
-$ vagrant up
 ```
-
-Use vagrant/vagrant to login and then type startx to launch the desktop.
 
 From there clone any repositories and bundle accordingly.
 
-Any files stored with the Vagrantfile become accessible under the /vagrant directory in the VM.  So, a vagrant file and cookbooks can be added to an existing repo, providing a way to spin up a testing environment with the test code already installed.
+Any files stored with the Vagrantfile become accessible under the /vagrant directory in the VM.  So, a Vagrantfile and Berksfile can be added to an existing repo, providing a way to spin up a testing environment with the test code already installed.
 
 Managing VM
 ---------------------------
