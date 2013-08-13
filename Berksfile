@@ -10,7 +10,7 @@ cookbook "openssl"
 # app
 cookbook "mysql"
 cookbook "java"
-cookbook "tomcat"
+cookbook "play2", github: "stevenjackson/play2"
 
 # testing
-cookbook 'rvm', github: 'fnichol/chef-rvm'
+cookbook "rvm", github: "fnichol/chef-rvm"

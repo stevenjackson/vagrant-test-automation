@@ -19,6 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "mysql"
     chef.add_recipe "mysql::server"
     chef.add_recipe "java"
+    chef.add_recipe "play2"
     chef.add_recipe "rvm::vagrant"
     chef.add_recipe "rvm::system"
 
