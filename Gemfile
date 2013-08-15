@@ -1,2 +1,5 @@
 source 'https://rubygems.org'
-gem 'testgen'
+
+gem 'cucumber'
+gem 'rspec'
+gem 'page-object'
