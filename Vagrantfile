@@ -10,6 +10,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.berkshelf.enabled = true
   config.omnibus.chef_version = :latest
 
+  config.vm.network :forwarded_port, guest: 9000, host: 9000
+
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe "apt"
     chef.add_recipe "build-essential"
