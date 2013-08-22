@@ -5,6 +5,7 @@ class TodoPage
 
   text_field(:new_item, :id => "label")
   button(:add, :text => "Create")
+  button(:complete_newest_item, :text =>"Delete", :index => 0)
 
   def add_item(item)
     self.new_item = item
@@ -15,4 +16,9 @@ class TodoPage
     list_item_elements.map { |element| element.text }
   end
 
+  def clear_list
+    until button_elements(:text => "Delete").empty? do
+      button_element(:text => "Delete").click
+    end
+  end
 end
