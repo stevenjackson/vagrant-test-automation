@@ -10,7 +10,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.berkshelf.enabled = true
   config.omnibus.chef_version = :latest
 
+  #play app (on VM)
   config.vm.network :forwarded_port, guest: 9000, host: 9000
+  #selenium remote(on host)
+  config.vm.network :private_network, ip: "192.168.88.2"
 
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe "apt"
@@ -46,5 +49,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
 
   end
+
+  $script = "su -l -c 'cd /vagrant && bundle install' vagrant"
+
+  config.vm.provision :shell, :inline => $script
 
 end
