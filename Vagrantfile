@@ -50,8 +50,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   end
 
-  $script = "su -l -c 'cd /vagrant && bundle install' vagrant"
+  $script = "su -l -c 'cd /vagrant/todolist && play compile' vagrant"
 
   config.vm.provision :shell, :inline => $script
 
+  $script = "su -l -c 'cd /vagrant && bundle install' vagrant"
+
+  config.vm.provision :shell, :inline => $script
 end
