@@ -35,8 +35,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         "server_debian_password" => "password"
       },
       'rvm' => {
-        'default_ruby' => 'ruby-2.0.0-p247',
-        'user_default_ruby' => 'ruby-2.0.0-p247',
+        'default_ruby' => 'ruby-2.0.0-p451',
+        'user_default_ruby' => 'ruby-2.0.0-p451',
         'global_gems'  => [
             {'name'    => 'bundler'},
             {'name'    => 'rake'}
