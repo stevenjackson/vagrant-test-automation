@@ -1,1 +1,3 @@
 default: --no-source --color --format pretty
+headless: --no-source --color --format progress PHANTOM=true
+remote: --no-source --color --format pretty REMOTE=true

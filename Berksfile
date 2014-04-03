@@ -14,3 +14,4 @@ cookbook "play2", github: "stevenjackson/play2"
 
 # testing
 cookbook "rvm", github: "fnichol/chef-rvm"
+cookbook "phantomjs"

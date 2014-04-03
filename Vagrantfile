@@ -27,6 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "play2"
     chef.add_recipe "rvm::vagrant"
     chef.add_recipe "rvm::system"
+    chef.add_recipe "phantomjs"
 
     chef.json = {
       "mysql" => {
