@@ -4,6 +4,30 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
+if ARGV[0] == "up" then
+  has_installed_plugins = false
+
+  unless Vagrant.has_plugin?("vagrant-vbguest")
+    system("vagrant plugin install vagrant-vbguest")
+    has_installed_plugins = true
+  end
+
+  unless Vagrant.has_plugin?("vagrant-berkshelf")
+    system("vagrant plugin install vagrant-berkshelf")
+    has_installed_plugins = true
+  end
+
+  unless Vagrant.has_plugin?("vagrant-omnibus")
+    system("vagrant plugin install vagrant-omnibus")
+    has_installed_plugins = true
+  end
+
+  if has_installed_plugins then
+    puts "Vagrant plugins were installed. Please run vagrant up again to install the VM"
+    exit
+  end
+end
+
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
